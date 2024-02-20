@@ -21,6 +21,21 @@ def test_make_a_post():
     print('---MAKE A POST started---')
     body = {"title": "foo", "body": "bar", "userId": 1}
     headers = {'Content-Type': 'application/json'}
-    response = requests.post('https://jsonplaceholder.typicode.com/posts', json = body, headers = headers)
+    response = requests.post('https://jsonplaceholder.typicode.com/posts', json=body, headers=headers)
     assert response.status_code == 201, 'Status code is incorrect'
     assert response.json()['id'] == 101, 'Id is incorrect'
+
+
+def test_print_one():
+    assert 1 == 1
+    return 1
+
+
+def test_print_two():
+    assert 2 == 2
+    return 2
+
+
+def test_print_three():
+    assert 3 == 3
+    return 3
