@@ -2,12 +2,12 @@ import pytest
 import requests
 
 
+@pytest.mark.smoke
 def test_get_one_post(new_post_id, pre_post):
     print()
     print('---GET ONE POST started---')
     response = requests.get(f'https://jsonplaceholder.typicode.com/posts/{new_post_id}').json()
     assert response['id'] == new_post_id
-
 
 def test_get_all_posts():
     print()
