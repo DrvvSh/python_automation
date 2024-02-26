@@ -61,3 +61,16 @@ def test_alerts(driver):
     driver.find_element(By.CLASS_NAME, 'a-button').click()
     alert = Alert(driver)
     alert.accept()
+
+
+# Scroll down to the bottom
+def test_scroll(driver):
+    driver.get('https://rateyourmusic.com')
+    driver.execute_script('window.scrollTo(0, document.body.scrollHeight)')
+
+
+# Scroll to the element
+def test_scroll_to_element(driver):
+    driver.get('https://rateyourmusic.com/genres/')
+    element = driver.find_element(By.LINK_TEXT, 'Experimental')
+    driver.execute_script('arguments[0].scrollIntoView()', element)
